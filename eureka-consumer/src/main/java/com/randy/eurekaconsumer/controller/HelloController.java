@@ -15,6 +15,7 @@ public class HelloController {
     @RequestMapping("/sayHello")
     public String sayHello() {
         log.info("consumer pipe");
-        return restTemplate.getForEntity("http://EUREKA-SERVICE/sayHello", String.class).getBody();
+       return restTemplate.getForObject("http://EUREKA-SERVICE/sayHello", String.class);
+       // return restTemplate.getForObject("http://EUREKA-SERVICE/sayHelllo",String.class);
     }
 }
